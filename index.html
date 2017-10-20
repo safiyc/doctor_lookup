@@ -7,6 +7,30 @@
     <title>Doctor Lookup</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Doctor Lookup</h1>
+      <p>Please enter your medical concern and your preferred area of service to get a list of doctors. You may also search by a doctor's name to get a detailed description of the doctor.</p>
+      <div class="well">
+        <form id="conditionSearch">
+          <div class="form-group">
+            <label for="condition">Enter your condition:</label>
+            <input type="text" id="condition">
+            <label for="location">Enter a location of service (ex. wa-seattle):</label>
+            <input type="text" id="location">
+            <button type="submit">Search</button>
+          </div>
+        </form>
 
+        <!-- <div id="doctorSearch">
+          <label for="name">Search by doctor:</label>
+          <input type="text" id="name">
+          <button id="doctorName"></button>
+        </div>
+      </div> -->
+
+      <div class="showDoctors"></div>
+      <div class="noResults"></div>
+      <div class="errorMessage"></div>
+    </div>
   </body>
 </html>

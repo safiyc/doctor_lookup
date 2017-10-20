@@ -1,5 +1,6 @@
 node_modules/
-coverage/
-tmp/
+.DS_Store
 bower_components/
-*.log
+build/
+tmp/
+.env

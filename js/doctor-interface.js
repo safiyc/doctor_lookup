@@ -1,15 +1,13 @@
 import { Doctor } from './../js/doctor.js';
 
 $(document).ready(function() {
-  $('#conditionSearch').submit(function(event) {
+  $('form#doctorSearch').submit(function(event) {
     event.preventDefault();
-    let doctor = new Doctor();
     let condition = $('#condition').val();
-    let location = $('#location').val();
+    let doctorName = $('#doctorName').val();
     $('#condition').val("");
-    $('#location').val("");
+    $('#doctorName').val("");
 
-    doctor.listDoctorsByCondition(condition, location);
   });
 });
 

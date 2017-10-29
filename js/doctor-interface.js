@@ -5,6 +5,8 @@ $(document).ready(function() {
     event.preventDefault();
     let condition = $('#condition').val();
     let doctorName = $('#doctorName').val();
+    let searchDoctor = new Doctor();
+    searchDoctor.getDoctor(condition);
     $('#condition').val("");
     $('#doctorName').val("");
 

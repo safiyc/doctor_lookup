@@ -1,20 +1,21 @@
 // var apiKey = require('./../.env').apiKey;
 
 export class Doctor {
-  constructor() {
+
+  getDoctor(search) {
+    $.get(`https://api.betterdoctor.com/2016-03-01/doctors?query=${search}&location=wa-seattle&skip=0&limit=10&user_key=${apiKey}`).then(function(response) {
+      let doctors = response;
+      doctors.forEach(function(doctor) {
+        $('.showDoctors').append(`
+          <p>Name: ${doctor.data.profile.first_name} ${doctor.data.profile.last_game}</p>`
+      })
+
+      $('.showDoctors').append(`response.data[0].profile.first_name`);
+    })
+    .fail(function(error) {
+      $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
+    });
   }
-  listDoctorsByCondition(condition, location) {
-    $('.showDoctors').append("test");
-  }
-  // listDoctorsByCondition(condition, location) {
-  //   $.get(`https://api.betterdoctor.com/2016-03-01/doctors?query=${condition}&location=${location}&skip=0&limit=10&user_key=be56d99e25fceebd5df712622dc97243`).then(function(response) {
-      // 'data' is retreived from API array
-      // let list = response.data;
-      // list.forEach(function(doctor) {
-      //   $('.showDoctors').append('<li>' + doctor.data.practices.name + '</li>');
-      // });
-    // });
-  // }
 }
 
 

@@ -13,18 +13,25 @@
       <div class="well">
         <form id="doctorSearch">
           <div class="form-group">
-            <label for="condition">Enter your condition:</label>
-            <input type="text" id="condition">
-            <label for="doctorName">Enter name of doctor:</label>
-            <input type="text" id="doctorName">
-            <button type="submit">Search</button>
+            <div class="row">
+              <div class="col-6-md">
+                <label for="condition">Enter your condition:</label>
+                <input type="text" id="condition">
+              </div>
+              <div class="col-6-md">
+                <label for="doctorName">Enter name of doctor:</label>
+                <input type="text" id="doctorName">
+              </div>
+              <button type="submit">Search</button>
+            </div>
           </div>
         </form>
       </div>
       <div class="well">
-        <div class="showDoctors"></div>
-        <div class="noResults"></div>
-        <div class="showErrors"></div>
+        <p>Search results:</p>
+        <div class="showDoctors">Show: </div>
+        <div class="noResults hide">There are no results for your search.</div>
+        <div class="showErrors hide"></div>
       </div>
     </div>
   </body>

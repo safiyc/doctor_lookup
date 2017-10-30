@@ -14,11 +14,12 @@ export class Doctor {
           <p>Phone: ${doctor.practices[0].phones[0].number}</p>
           <p>Website: ${doctor.practices[0].website}</p>
           <p>Accepting New Patients: ${doctor.practices[0].accepts_new_patients}</p>`);
+        })
       })
-    })
+    // })
     .fail(function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
-    });
+    })
   }
 }
 

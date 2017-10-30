@@ -6,18 +6,16 @@ $(document).ready(function() {
     let condition = $('#condition').val();
     let doctorName = $('#doctorName').val();
     let searchDoctor = new Doctor();
-    // $('#condition').val("");
-    // $('#doctorName').val("");
+    $('#condition').val("");
+    $('#doctorName').val("");
 
     if(condition.length > 0) {
       searchDoctor.getDoctors(condition);
     } else if (doctorName.length > 0) {
       searchDoctor.getDoctors(doctorName)
-    } else {
-      $('.noResults').removeClass('hide');
+    } else if ((condition.length == 0) && (doctorName.length == 0)) {
+      $('.noResults').append('There are no results for your search.');
     }
-
-
   });
 });
 

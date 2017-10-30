@@ -27,7 +27,9 @@ var Doctor = exports.Doctor = function () {
         doctors.data.forEach(function (doctor) {
           $('.showDoctors').append('\n          <p>Name: ' + doctor.profile.first_name + ' ' + doctor.profile.last_name + '</p>\n          <p>Address: ' + doctor.practices[0].visit_address.street + '<br>\n          ' + doctor.practices[0].visit_address.city + ', ' + doctor.practices[0].visit_address.state + ',\n          ' + doctor.practices[0].visit_address.zip + '</p>\n          <p>Phone: ' + doctor.practices[0].phones[0].number + '</p>\n          <p>Website: ' + doctor.practices[0].website + '</p>\n          <p>Accepting New Patients: ' + doctor.practices[0].accepts_new_patients + '</p>');
         });
-      }).fail(function (error) {
+      })
+      // })
+      .fail(function (error) {
         $('.showErrors').text('There was an error processing your request: ' + error.responseText + '. Please try again.');
       });
     }
@@ -49,15 +51,15 @@ $(document).ready(function () {
     var condition = $('#condition').val();
     var doctorName = $('#doctorName').val();
     var searchDoctor = new _doctor.Doctor();
-    // $('#condition').val("");
-    // $('#doctorName').val("");
+    $('#condition').val("");
+    $('#doctorName').val("");
 
     if (condition.length > 0) {
       searchDoctor.getDoctors(condition);
     } else if (doctorName.length > 0) {
       searchDoctor.getDoctors(doctorName);
-    } else {
-      $('.noResults').removeClass('hide');
+    } else if (condition.length == 0 && doctorName.length == 0) {
+      $('.noResults').append('There are no results for your search.');
     }
   });
 });

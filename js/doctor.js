@@ -2,7 +2,7 @@ var apiKey = require('./../.env').apiKey;
 
 export class Doctor {
 
-  getDoctors(condition) {
+  getDoctors(condition, doctorName) {
     $.get(`https://api.betterdoctor.com/2016-03-01/doctors?query=${condition}&location=wa-seattle&skip=0&limit=10&user_key=${apiKey}`).then(function(response) {
       let doctors = response;
       doctors.data.forEach(function(doctor) {

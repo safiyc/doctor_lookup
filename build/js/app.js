@@ -21,7 +21,7 @@ var Doctor = exports.Doctor = function () {
 
   _createClass(Doctor, [{
     key: 'getDoctors',
-    value: function getDoctors(condition) {
+    value: function getDoctors(condition, doctorName) {
       $.get('https://api.betterdoctor.com/2016-03-01/doctors?query=' + condition + '&location=wa-seattle&skip=0&limit=10&user_key=' + apiKey).then(function (response) {
         var doctors = response;
         doctors.data.forEach(function (doctor) {
@@ -52,12 +52,13 @@ $(document).ready(function () {
     // $('#condition').val("");
     // $('#doctorName').val("");
 
-    // if(condition != "") {
-    // $('.showDoctors').removeClass('hide');
-    //   $('.showDoctors').append(`First Name: ${searchDoctor.getDoctors.first_name}`);
-    // }
-
-    searchDoctor.getDoctors(condition);
+    if (condition.length > 0) {
+      searchDoctor.getDoctors(condition);
+    } else if (doctorName.length > 0) {
+      searchDoctor.getDoctors(doctorName);
+    } else {
+      $('.noResults').removeClass('hide');
+    }
   });
 });
 

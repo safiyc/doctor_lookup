@@ -9,12 +9,15 @@ $(document).ready(function() {
     // $('#condition').val("");
     // $('#doctorName').val("");
 
-    // if(condition != "") {
-      // $('.showDoctors').removeClass('hide');
-    //   $('.showDoctors').append(`First Name: ${searchDoctor.getDoctors.first_name}`);
-    // }
+    if(condition.length > 0) {
+      searchDoctor.getDoctors(condition);
+    } else if (doctorName.length > 0) {
+      searchDoctor.getDoctors(doctorName)
+    } else {
+      $('.noResults').removeClass('hide');
+    }
 
-    searchDoctor.getDoctors(condition);
+
   });
 });
 

@@ -18,7 +18,7 @@ export class Doctor {
       })
     // })
     .fail(function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
+      $('.apiErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
     })
   }
 }

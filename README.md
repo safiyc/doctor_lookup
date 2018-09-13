@@ -1,31 +1,28 @@
 # Doctor Lookup
 
-#### Technologies used: HTML, CSS, Javascript, API
+### Technologies: HTML, CSS, JavaScript, API
 
-##### By Safiy Cham
+### By Safiy Cham
 
 ## Description
 
-This program lets users search for doctors in the Seattle area by inputting a condition or a doctor's name.
+A simple program allowing the user to look up doctors by name or by health concern. A list of doctors, along with information about the doctors are displayed.
 
 ## Setup
 
 * clone github folder
-
+* node.js is needed to run gulp
 * signup at https://developer.betterdoctor.com/ to retrieve api key
 * create .env file in root directory and paste this text: exports.apiKey = "place api key inside quote";
 * add 'user_key' parameter to your API calls to authenticate
 
 * while terminal is in project directory, run:
   * npm install
+  * bower init
   * bower install
   * gulp build
   * gulp serve
-* website will launch on Chrome browser
-
-## Link
-
-Click here (https://github.com/safiyc/doctor_lookup.git) to access the Github page for this project.
+* website will launch on browser
 
 ## Pending Features
 
@@ -33,7 +30,20 @@ Click here (https://github.com/safiyc/doctor_lookup.git) to access the Github pa
 * allow users to search by location, instead of having the app hardcoded to Seattle
 * add an additional API call to retrieve the list of specialties from the database before querying for a doctor
 
+## Links
+
+#### Launch Project - [Doctor Lookup](https://safiyc.github.io/doctor_lookup/)
+
+#### [Github Repo](https://github.com/safiyc/doctor_lookup.git)
+
+#### [Portfolio](http://www.safiycham.com/)
+
+## Contact Info
+
+#### csafiy@yahoo.com
 
 ## License
 
-This software is licensed under the MIT licensed
+This software is licensed under the MIT License
+
+Copyright 2018

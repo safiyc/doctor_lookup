@@ -17,10 +17,19 @@ var lib = require('bower-files')({
     }
   }
 });
+
 var browserSync = require('browser-sync').create();
 var babelify = require("babelify");
+var deploy = require('gulp-gh-pages');
 
 var buildProduction = utilities.env.production;
+
+
+/* Push build to gh-pages */
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
+});
 
 gulp.task('concatInterface', function() {
   return gulp.src(['./js/*-interface.js'])
